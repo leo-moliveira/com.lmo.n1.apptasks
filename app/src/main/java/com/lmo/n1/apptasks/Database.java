@@ -19,8 +19,9 @@ public class Database extends SQLiteOpenHelper {
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                 "title TEXT NOT NULL," +
                 "description TEXT NOT NULL," +
-                "image TEXT NOT NULL," +
-                "completed INTEGER NOT NULL)");
+                "image TEXT DEFAULT NULL," +
+                "completed INTEGER DEFAULT 0)");
+        sqLiteDatabase.execSQL("INSERT INTO tasks (title,description) VALUES ('Example Task','This is an example of task')");
     }
 
     @Override

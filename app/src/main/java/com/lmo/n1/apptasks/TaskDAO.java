@@ -45,7 +45,7 @@ public class TaskDAO{
         Database localdb = new Database(context);
         SQLiteDatabase db = localdb.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM tasks ORDER BY completed", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM tasks WHERE completed <= 0 ORDER BY completed", null);
         if(cursor.getCount() > 0 ){
             cursor.moveToFirst();
             do {
@@ -54,25 +54,28 @@ public class TaskDAO{
                 task.setTitle(cursor.getString(cursor.getColumnIndex("title")));
                 task.setDescription(cursor.getString(cursor.getColumnIndex("description")));
                 task.setImage(cursor.getString(cursor.getColumnIndex("image")));
-                task.setCompleted(cursor.getInt(cursor.getColumnIndex("completed")));
+                task.setCompleted(cursor.getInt(cursor.getColumnIndex("completed")) == 1);
+                list.add(task);
             }while (cursor.moveToNext());
         }else{
             //nothing
         }
         return list;
     }
+
     public static Task getTaskById(int id, Context context){
         Database localdb = new Database(context);
         SQLiteDatabase db = localdb.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM tasks WHERE id = " + id, null);
 
         if(cursor.getCount() > 0 ){
+            cursor.moveToFirst();
             Task task = new Task();
             task.setId(cursor.getInt(cursor.getColumnIndex("id")));
             task.setTitle(cursor.getString(cursor.getColumnIndex("title")));
             task.setDescription(cursor.getString(cursor.getColumnIndex("description")));
             task.setImage(cursor.getString(cursor.getColumnIndex("image")));
-            task.setCompleted(cursor.getInt(cursor.getColumnIndex("completed")));
+            task.setCompleted(cursor.getInt(cursor.getColumnIndex("completed")) == 1);
             return task;
         }else{
             return null;

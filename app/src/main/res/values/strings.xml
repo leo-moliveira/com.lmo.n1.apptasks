@@ -16,4 +16,10 @@
     <string name="form_task_img">Task image</string>
     <string name="btn_form_task_save">Save</string>
     <string name="form_task_checkbox">Completed:</string>
+    <string name="alertTitleDelete">Warning</string>
+    <string name="alertMessageSufix">\?</string>
+    <string name="alertMessagePrefix">\?</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">YES</string>
+    <string name="formEmpty">Please fill at least title and description</string>
 </resources>

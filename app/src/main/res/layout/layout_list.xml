@@ -43,11 +43,7 @@
             android:id="@+id/llTaskDesc"
             />
 
-        <CheckBox
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="end"
-            android:id="@+id/llTaskCompleted"/>
+
 
     </LinearLayout>
 

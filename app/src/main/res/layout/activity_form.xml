@@ -13,13 +13,13 @@
         android:layout_marginTop="64dp"
         android:text="@string/form_task_img"
         android:textSize="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@+id/formImageButton"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/formImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -40,12 +40,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/fromTaksTitle"
-        android:layout_width="206dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="100dp"
+        android:id="@+id/formTaskTitle"
+        android:layout_width="204dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -94,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@+id/formTaksDesc" />
 
     <Button
-        android:id="@+id/formTaksBtn"
+        android:id="@+id/formBtnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
@@ -105,7 +105,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:background="#272A60"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

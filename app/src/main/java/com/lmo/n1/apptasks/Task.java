@@ -5,17 +5,16 @@ public class Task {
     private String title;
     private String description;
     private String image;
-    private int completed;
+    private boolean completed;
 
     public Task(){}
 
-    public Task(int id, String title, String description, String image, int completed){
+    public Task(int id, String title, String description, String image, boolean completed){
         this.setId(id);
         this.setTitle(title);
         this.setDescription(description);
         this.setImage(image);
         this.setCompleted(completed);
-
     }
 
     public int getId() {
@@ -50,11 +49,11 @@ public class Task {
         this.image = image;
     }
 
-    public int getCompleted() {
+    public boolean getCompleted() {
         return completed;
     }
 
-    public void setCompleted(int completed) {
+    public void setCompleted(boolean completed) {
         this.completed = completed;
     }
 
