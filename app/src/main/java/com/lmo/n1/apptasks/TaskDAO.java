@@ -45,7 +45,7 @@ public class TaskDAO{
         Database localdb = new Database(context);
         SQLiteDatabase db = localdb.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM tasks WHERE completed <= 0 ORDER BY completed", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM tasks ORDER BY completed", null);
         if(cursor.getCount() > 0 ){
             cursor.moveToFirst();
             do {
@@ -80,5 +80,19 @@ public class TaskDAO{
         }else{
             return null;
         }
+    }
+    public static void complete(Task task,Context context){
+        int taskStatus;
+        ContentValues values = new ContentValues();
+        Database localdb = new Database(context);
+        SQLiteDatabase db = localdb.getWritableDatabase();
+        if(task.getCompleted()){
+            taskStatus = 0;
+        }else{
+            taskStatus = 1;
+        }
+        values.put("completed",taskStatus);
+
+        db.update("tasks",values,"id = " + task.getId(),null);
     }
 }

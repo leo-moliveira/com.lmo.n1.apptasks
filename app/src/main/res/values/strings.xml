@@ -22,4 +22,7 @@
     <string name="cancel">Cancel</string>
     <string name="yes">Yes</string>
     <string name="formEmpty">Please fill at least title and description</string>
+    <string name="formTitleImageSelect">Image</string>
+    <string name="formImageFromCamera">Take a picture</string>
+    <string name="formImageFromGallery">Select on gallery</string>
 </resources>
